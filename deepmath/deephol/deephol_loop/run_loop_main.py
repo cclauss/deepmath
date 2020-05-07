@@ -45,7 +45,7 @@ def main(argv):
     logging.info('Setting up loop...')
     loop.setup_examples(FLAGS.initial_examples)
   else:
-    for _ in xrange(FLAGS.rounds):
+    for _ in range(FLAGS.rounds):
       loop.perform_round(FLAGS.initial_examples)
 
 
