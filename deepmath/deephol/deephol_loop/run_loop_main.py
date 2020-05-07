@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from __future__ import division
 # Import Type Annotations
 from __future__ import print_function
+from six.moves import xrange  # pylint: disable=redefined-builtin
 from tensorflow import app
 from tensorflow import flags
 from tensorflow import logging
@@ -45,7 +46,7 @@ def main(argv):
     logging.info('Setting up loop...')
     loop.setup_examples(FLAGS.initial_examples)
   else:
-    for _ in range(FLAGS.rounds):
+    for _ in xrange(FLAGS.rounds):
       loop.perform_round(FLAGS.initial_examples)
 
 
