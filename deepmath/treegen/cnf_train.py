@@ -187,7 +187,7 @@ def train(hparams):
               xrange(FLAGS.num_summary_samples), sampling_temps):
             cnf = textwrap.wrap(cnf_utils.unparse_cnf(m.sample(sess)))
             summaries.value.add(tag='formula_temp%g_%d' % (temp, i),
-                                tensor=make_tensor_proto('\n'.join(cnf)))
+                                tensor=tf.make_tensor_proto('\n'.join(cnf)))
 
           supervisor.summary_writer.add_summary(summaries.SerializeToString(),
                                                 global_step_val)
